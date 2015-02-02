@@ -17,6 +17,8 @@
 
 #define OFF 1;
 #define ON 0;
+#define TRISOut 0;
+#define TRISIn	1;
 
 void initLEDs();
 void initSW1();

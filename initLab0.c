@@ -11,10 +11,10 @@
 
 void initLEDs(){
     //Initialize the pin connected to the LEDs as outputs
-	TRISBbits.TRISB15 = 0;
-    TRISBbits.TRISB14 = 0;
-    TRISBbits.TRISB13 = 0;
-    TRISBbits.TRISB12 = 0;
+	TRISBbits.TRISB15 = TRISOut;
+    TRISBbits.TRISB14 = TRISOut;
+    TRISBbits.TRISB13 = TRISOut;
+    TRISBbits.TRISB12 = TRISOut;
 
     //Turn each LED OFF
 	LED4 = OFF;
@@ -26,7 +26,7 @@ void initLEDs(){
 
 void initSW1(){
     //Initialize the pin connected to the switch as an input.
-	TRISBbits.TRISB5 = 1;
+	TRISBbits.TRISB5 = TRISIn;
 	
 	//Put the overall CN Interrupt flag down
     IFS1bits.CNIF = 0;
