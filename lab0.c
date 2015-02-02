@@ -28,18 +28,23 @@ _CONFIG2( IESO_OFF & SOSCSEL_SOSC & WUTSEL_LEG & FNOSC_PRIPLL & FCKSM_CSDCMD & O
 
 typedef enum stateTypeEnum{
     //Define states by name
-	D4, D5, D6, D7
+	D4, 
+	D5, 
+	D6, 
+	D7 
 } stateType;
 
 volatile stateType currState;
+volatile int count;
 
 int main(void)
 {
 	currState = D4;
+	count = 0;
 	
     //TODO: Finish these functions in the provided c files
     initLEDs();
-    //initTimer1();
+    initTimer1();
     initSW1();
     
     while(1)
@@ -68,17 +73,27 @@ void _ISR _CNInterrupt(void){
 	
 	//Move to next state when Switch 1 is pressed (and released)
     if(PORTBbits.RB5 == RELEASED){
-        if(currState == D4) currState = D5;
-        else if(currState == D5) currState = D6;
-        else if(currState == D6) currState = D7;
-        else if(currState == D7) currState = D4;
+		if(count <= 2){
+			if(currState == D4) currState = D5;
+			else if(currState == D5) currState = D6;
+			else if(currState == D6) currState = D7;
+			else if(currState == D7) currState = D4;
+		}
+		else {
+			if(currState == D4) currState = D7;
+			else if(currState == D5) currState = D4;
+			else if(currState == D6) currState = D5;
+			else if(currState == D7) currState = D6;
+		}
+		count = 0;
     }
 }
-/*
+
 void _ISR _T1Interrupt(void){
     //TODO: Put down the timer 1 flag first!
     IFS0bits.T1IF = 0;
 
     //TODO: Change states if necessary.
     //Make sure if you use any variables that they are declared volatile!
-} */
+	count = count+1;
+} 
