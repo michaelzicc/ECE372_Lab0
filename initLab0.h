@@ -21,6 +21,7 @@
 void initLEDs();
 void initSW1();
 void initTimer1();
+void turnOnLED(int led);
 
 #endif	/* INITLAB0_H */
 

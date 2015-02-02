@@ -27,9 +27,45 @@ void initLEDs(){
 void initSW1(){
     //Initialize the pin connected to the switch as an input.
 	TRISBbits.TRISB5 = 1;
+	
+	//Put the overall CN Interrupt flag down
+    IFS1bits.CNIF = 0;
+
+    //Enable the overall change notification interrupt
+    IEC1bits.CNIE = 1;
+
+    // Enable the change notification interrupt for the switch 1 
+    CNEN2bits.CN27IE = 1;
 }
 
 
 void initTimer1(){
     //TODO: Initialize the timer
+}
+
+void turnOnLED(int led){
+    if(led == 4){
+        LED4 = ON;
+        LED5 = OFF;
+        LED6 = OFF;
+        LED7 = OFF;
+    }
+    else if(led == 5){
+        LED4 = OFF;
+        LED5 = ON;
+        LED6 = OFF;
+        LED7 = OFF;
+    }
+    else if(led == 6){
+        LED4 = OFF;
+        LED5 = OFF;
+        LED6 = ON;
+        LED7 = OFF;
+    }
+    else if(led == 7){
+        LED4 = OFF;
+        LED5 = OFF;
+        LED6 = OFF;
+        LED7 = ON;
+    }
 }
