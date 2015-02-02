@@ -9,9 +9,18 @@
 #include "initLab0.h"
 
 void initLEDs(){
-    //TODO: Initialize the pin connected to the LEDs as outputs
+    //Initialize the pin connected to the LEDs as outputs
+	TRISBbits.TRISB15 = 0;
+    TRISBbits.TRISB14 = 0;
+    TRISBbits.TRISB13 = 0;
+    TRISBbits.TRISB12 = 0;
 
-    //TODO: Turn each LED OF
+    //Turn each LED OFF
+	LED4 = OFF;
+	LED5 = OFF;
+	LED6 = OFF;
+	LED7 = OFF;
+	
 }
 
 void initSW1(){
