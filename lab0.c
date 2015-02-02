@@ -1,8 +1,8 @@
 // ******************************************************************************************* //
 //
 // File:         lab0.c
-// Date:         
-// Authors:      
+// Date:         Monday, February 02, 2015
+// Authors:      Michael Ziccarelli
 //
 // Description:  Lab 0 assignment for ECE 372 Spring 2015.
 // ******************************************************************************************* //
@@ -31,10 +31,12 @@ typedef enum stateTypeEnum{
 	D4, D5, D6, D7
 } stateType;
 
+volatile stateType currState;
 
 int main(void)
 {
-
+	currState = D4;
+	
     //TODO: Finish these functions in the provided c files
     initLEDs();
     initTimer1();
@@ -43,9 +45,16 @@ int main(void)
     while(1)
     {
         //Use a switch statement to define the behavior based on the state
-//        switch(){
-//
-//        }
+        switch(currState){
+			case D4:
+				break;
+			case D5:
+				break;
+			case D6:
+				break;
+			case D7:
+				break;
+        }
     }
     return 0;
 }
