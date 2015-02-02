@@ -47,12 +47,16 @@ int main(void)
         //Use a switch statement to define the behavior based on the state
         switch(currState){
 			case D4:
+				turnOnLED(4);
 				break;
 			case D5:
+				turnOnLED(5);
 				break;
 			case D6:
+				turnOnLED(6);
 				break;
 			case D7:
+				turnOnLED(7);
 				break;
         }
     }
