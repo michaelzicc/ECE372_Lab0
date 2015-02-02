@@ -39,9 +39,9 @@ void initSW1(){
 }
 
 
-void initTimer1(){
+//void initTimer1(){
     //TODO: Initialize the timer
-}
+//}
 
 void turnOnLED(int led){
     if(led == 4){

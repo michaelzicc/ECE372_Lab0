@@ -39,7 +39,7 @@ int main(void)
 	
     //TODO: Finish these functions in the provided c files
     initLEDs();
-    initTimer1();
+    //initTimer1();
     initSW1();
     
     while(1)
@@ -74,11 +74,11 @@ void _ISR _CNInterrupt(void){
         else if(currState == D7) currState = D4;
     }
 }
-
+/*
 void _ISR _T1Interrupt(void){
     //TODO: Put down the timer 1 flag first!
     IFS0bits.T1IF = 0;
 
     //TODO: Change states if necessary.
     //Make sure if you use any variables that they are declared volatile!
-}
+} */

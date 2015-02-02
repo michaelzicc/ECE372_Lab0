@@ -15,16 +15,16 @@
 #define LED6 LATBbits.LATB13
 #define LED7 LATBbits.LATB12
 
-#define OFF 1;
-#define ON 0;
-#define TRISOut 0;
-#define TRISIn	1;
+#define OFF 1
+#define ON 0
+#define TRISOut 0
+#define TRISIn	1
 #define PRESSED 0
 #define RELEASED 1
 
 void initLEDs();
 void initSW1();
-void initTimer1();
+//void initTimer1();
 void turnOnLED(int led);
 
 #endif	/* INITLAB0_H */
