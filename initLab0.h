@@ -19,6 +19,8 @@
 #define ON 0;
 #define TRISOut 0;
 #define TRISIn	1;
+#define PRESSED 0
+#define RELEASED 1
 
 void initLEDs();
 void initSW1();

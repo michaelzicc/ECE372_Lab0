@@ -59,6 +59,18 @@ int main(void)
     return 0;
 }
 
+void _ISR _CNInterrupt(void){
+    IFS1bits.CNIF = 0;	//put down interrupt flag
+	
+	//Move to next state when Switch 1 is pressed (and released)
+    if(PORTBbits.RB5 == RELEASED){
+        if(currState == D4) currState = D5;
+        else if(currState == D5) currState = D6;
+        else if(currState == D6) currState = D7;
+        else if(currState == D7) currState = D4;
+    }
+}
+
 void _ISR _T1Interrupt(void){
     //TODO: Put down the timer 1 flag first!
     IFS0bits.T1IF = 0;
