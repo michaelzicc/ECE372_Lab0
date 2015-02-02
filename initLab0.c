@@ -9,7 +9,7 @@
 #include "initLab0.h"
 
 void initLEDs(){
-    //TODO: Initialize the pin connected to the LEDs as outputs this is a test
+    //TODO: Initialize the pin connected to the LEDs as outputs
 
     //TODO: Turn each LED OF
 }
