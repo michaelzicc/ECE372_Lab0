@@ -21,10 +21,12 @@
 #define TRISIn	1
 #define PRESSED 0
 #define RELEASED 1
+#define FCY 14745600.0
+#define TIME_DELAY 1
 
 void initLEDs();
 void initSW1();
-//void initTimer1();
+void initTimer1();
 void turnOnLED(int led);
 
 #endif	/* INITLAB0_H */
