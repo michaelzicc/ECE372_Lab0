@@ -73,7 +73,8 @@ void _ISR _CNInterrupt(void){
 	
 	//Move to next state when Switch 1 is pressed (and released)
     if(PORTBbits.RB5 == RELEASED){
-		if(count <= 2){
+		T1CONbits.TON = 0; // Turn the timer 1 off
+		if(count <= 1){
 			if(currState == D4) currState = D5;
 			else if(currState == D5) currState = D6;
 			else if(currState == D6) currState = D7;
@@ -87,6 +88,9 @@ void _ISR _CNInterrupt(void){
 		}
 		count = 0;
     }
+	if(PORTBbits.RB5 == PRESSED){
+		T1CONbits.TON = 1; // Turn the timer 1 on
+	}
 }
 
 void _ISR _T1Interrupt(void){

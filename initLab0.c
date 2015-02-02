@@ -39,9 +39,14 @@ void initSW1(){
 }
 
 
-//void initTimer1(){
+void initTimer1(){
     //TODO: Initialize the timer
-//}
+	unsigned int prVal = (FCY*TIME_DELAY)/256.0 - 1;
+    PR1 = prVal;
+    T1CONbits.TCKPS = 0b11; //prescalar 256
+    IEC0bits.T1IE = 1; // Enable the interrupt
+    IFS0bits.T1IF = 0; // Put the interrupt flag down
+}
 
 void turnOnLED(int led){
     if(led == 4){
