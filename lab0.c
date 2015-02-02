@@ -27,7 +27,8 @@ _CONFIG2( IESO_OFF & SOSCSEL_SOSC & WUTSEL_LEG & FNOSC_PRIPLL & FCKSM_CSDCMD & O
 
 
 typedef enum stateTypeEnum{
-    //TODO: Define states by name
+    //Define states by name
+	D4, D5, D6, D7
 } stateType;
 
 
