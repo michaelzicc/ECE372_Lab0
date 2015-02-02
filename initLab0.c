@@ -1,6 +1,7 @@
 /*
 * File:   initLab0.c
-* Author: 
+* Date:   Monday, February 02, 2015, 04:22:52 AM
+* Author: Michael Ziccarelli
 *
 * Created on December 27, 2014, 1:31 PM
 */
@@ -24,7 +25,8 @@ void initLEDs(){
 }
 
 void initSW1(){
-    //TODO: Initialize the pin connected to the switch as an input.
+    //Initialize the pin connected to the switch as an input.
+	TRISBbits.TRISB5 = 1;
 }
 
 
